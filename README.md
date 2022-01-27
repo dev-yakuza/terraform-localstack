@@ -52,7 +52,7 @@ localstack status services
 
 ## Terraform
 
-- https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform
+- terraform: [https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform)
 
 ```barh
 brew tap hashicorp/tap
