@@ -41,6 +41,7 @@ pyenv activate venv
 
 ```bash
 pip install localstack
+pip install awscli-local
 ```
 
 - Start `localstack`
@@ -66,4 +67,16 @@ cd terraform
 terraform init
 terraform plan
 terraform apply
+```
+
+- Get REST_API_ID
+
+```bash
+awslocal apigateway get-rest-apis --query 'items[0].id' --output text
+```
+
+- Execute Lambda
+
+```bash
+curl http://localhost:4566/restapis/$REST_API_ID/Prod/_user_request_/request_from_query
 ```
