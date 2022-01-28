@@ -4,6 +4,7 @@ terraform {
       source = "hashicorp/aws"
     }
 
+    # For making a zip file for lambda
     archive = {
       source = "hashicorp/archive"
     }
@@ -112,7 +113,7 @@ resource "aws_lambda_permission" "lambda" {
 
 data "archive_file" "lambda_source" {
   type        = "zip"
-  source_dir  = "api"
+  source_dir  = "../api"
   output_path = "archive/my_lambda.zip"
 }
 
