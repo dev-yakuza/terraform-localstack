@@ -113,7 +113,7 @@ resource "aws_lambda_permission" "lambda" {
 
 data "archive_file" "lambda_source" {
   type        = "zip"
-  source_dir  = "../api"
+  source_dir  = "../source/api"
   output_path = "archive/my_lambda.zip"
 }
 
