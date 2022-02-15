@@ -69,14 +69,10 @@ terraform plan
 terraform apply
 ```
 
-- Get REST_API_ID
+## lambda
+
+- Terraform module: [lambda](https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws/latest)
 
 ```bash
-awslocal apigateway get-rest-apis --query 'items[0].id' --output text
-```
-
-- Execute Lambda
-
-```bash
-curl http://localhost:4566/restapis/$REST_API_ID/Prod/_user_request_/request_from_query
+aws lambda --endpoint-url=http://localhost:4566 invoke --function-name my-lambda result.log
 ```
